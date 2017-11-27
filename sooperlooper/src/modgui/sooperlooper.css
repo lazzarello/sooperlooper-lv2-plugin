@@ -110,6 +110,12 @@
     .mod-sooperlooper .mod-control-group .mod-control-image#play::after {
         content: "PLAY/PAUSE";
     }
+    .mod-sooperlooper .mod-control-image#sync {
+        background-image:url(/resources/push_switch1.png{{{ns}}}) !important;
+    }
+    .mod-sooperlooper .mod-control-group .mod-control-image#sync::after {
+        content: "SYNC";
+    }
     .mod-sooperlooper .mod-control-image#reset {
         background-image:url(/resources/push_switch1.png{{{ns}}}) !important;
         background-size: cover;

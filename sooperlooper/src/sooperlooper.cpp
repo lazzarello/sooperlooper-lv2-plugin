@@ -40,7 +40,7 @@
 
 /**********************************************************************************************************************************************************/
 
-enum {IN_0, OUT_0, PLAY_PAUSE, RECORD, RESET, UNDO, REDO, PLUGIN_PORT_COUNT};
+enum {IN_0, OUT_0, PLAY_PAUSE, RECORD, RESET, UNDO, REDO, SYNC, PLUGIN_PORT_COUNT};
 
 #define PLUGIN_AUDIO_PORT_COUNT     2
 #define PLUGIN_CONTROL_PORT_COUNT   PLUGIN_PORT_COUNT - PLUGIN_AUDIO_PORT_COUNT
@@ -286,6 +286,7 @@ public:
     float *reset;
     float *undo;
     float *redo;
+    float *sync;
     SooperLooper *pLS;
     int playing;
     int started;
@@ -1704,6 +1705,7 @@ void SooperLooperPlugin::activate(LV2_Handle instance)
   pLS->fRoundMode = 0;  
   pLS->bHoldMode = 0;
   pLS->fRedoTapMode = 1;
+  // cool, varispeed!
   pLS->bRateCtrlActive = 0;
   
   pLS->state = STATE_PLAY;
@@ -1751,6 +1753,9 @@ void SooperLooperPlugin::connect_port(LV2_Handle instance, uint32_t port, void *
         break;
     case REDO:
         plugin->redo = (float*) data;
+        break;
+    case SYNC;
+        plugin->sync = (float*) data;
         break;
     }
 }
