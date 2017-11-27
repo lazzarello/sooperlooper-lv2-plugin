@@ -1754,7 +1754,7 @@ void SooperLooperPlugin::connect_port(LV2_Handle instance, uint32_t port, void *
     case REDO:
         plugin->redo = (float*) data;
         break;
-    case SYNC;
+    case SYNC:
         plugin->sync = (float*) data;
         break;
     }
