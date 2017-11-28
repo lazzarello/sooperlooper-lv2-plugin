@@ -111,4 +111,46 @@ lv2:port [
   lv2:minimum 0;
   lv2:maximum 1;
   lv2:portProperty lv2:integer, lv2:toggled, pprops:trigger;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 8;
+  lv2:symbol "bpm_host";
+  lv2:name "BPM/Host";
+  lv2:default 120;
+  lv2:minimum 6;
+  lv2:maximum 1000;
+  lv2:portProperty mod:tapTempo;
+  lv2:designation time:beatsPerMinute;
+  units:unit units:bpm;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 9;
+  lv2:symbol "bpm_user";
+  lv2:name "BPM";
+  lv2:default 120;
+  lv2:minimum 6;
+  lv2:maximum 1000;
+  units:unit units:bpm;
+],
+[
+  a lv2:ControlPort, lv2:InputPort;
+  lv2:index 10;
+  lv2:symbol "source";
+  lv2:name "BPM Source";
+  lv2:shortName "Source";
+  lv2:default 0;
+  lv2:minimum 0;
+  lv2:maximum 1;
+  lv2:portProperty lv2:integer, lv2:enumeration;
+  lv2:scalePoint [
+    rdf:value 0;
+    rdfs:label "BPM/Host";
+    rdfs:comment "Tempo set by host";
+  ],[
+    rdf:value 1;
+    rdfs:label "BPM/User";
+    rdfs:comment "Tempo set by user";
+  ];
 ].
