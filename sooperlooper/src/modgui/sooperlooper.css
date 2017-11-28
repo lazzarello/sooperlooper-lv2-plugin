@@ -110,12 +110,6 @@
     .mod-sooperlooper .mod-control-group .mod-control-image#play::after {
         content: "PLAY/PAUSE";
     }
-    .mod-sooperlooper .mod-control-image#sync {
-        background-image:url(/resources/push_switch1.png{{{ns}}}) !important;
-    }
-    .mod-sooperlooper .mod-control-group .mod-control-image#sync::after {
-        content: "SYNC";
-    }
     .mod-sooperlooper .mod-control-image#reset {
         background-image:url(/resources/push_switch1.png{{{ns}}}) !important;
         background-size: cover;
@@ -129,6 +123,27 @@
     }
     .mod-sooperlooper .mod-control-image#reset::after {
         content: "RESET";
+        position: absolute;
+        left: 100%;
+        top: 0;
+        bottom: 0;
+        height: 64px;
+        line-height: 64px;
+        color: white;
+    }
+    .mod-sooperlooper .mod-control-image#sync {
+        background-image:url(/resources/push_switch1.png{{{ns}}}) !important;
+        background-size: cover;
+        width: 64px;
+        height: 64px;
+        cursor: pointer;
+        z-index: 2000000;
+        position: absolute;
+        top: 10px;
+        right: 320px;
+    }
+    .mod-sooperlooper .mod-control-image#sync::after {
+        content: "SYNC";
         position: absolute;
         left: 100%;
         top: 0;
